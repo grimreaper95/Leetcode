@@ -23,5 +23,5 @@ class Solution:
             k=(a&b)&mask
             a=(a^b)&mask
             b=k<<1
-        if (a>>31) & 1: return ~(a^mask) #if a number is negative it does 2's complement twice (once to get the original absolute value and then to negate it)
+        if (a>>31) & 1: return ~(a^mask) #if a number is negative it does 2's complement twice (once to get the original abs value and then to negate it)
         return a
