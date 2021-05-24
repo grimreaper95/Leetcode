@@ -63,3 +63,24 @@ class Solution:
             done = 1
             
         if done : return final_list
+        
+        
+        
+        
+        
+''' Below solution is by using backtracking that should ideally be used to solve this problem'''
+
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        
+        def dfs(nums,backtrack,result):
+            if not backtrack:
+                return(result.append(nums))
+                
+            for i in range(len(backtrack)):
+                dfs(nums+[backtrack[i]],backtrack[:i]+backtrack[i+1:],result)
+        res=[]
+        dfs([],nums,res)
+        return res
+    
+    
